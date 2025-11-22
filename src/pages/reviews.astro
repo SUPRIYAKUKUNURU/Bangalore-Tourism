@@ -1,0 +1,15 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Reviews from "../components/Reviews.jsx";
+---
+
+<MainLayout title="Bangalore Tourism | Traveller Reviews">
+  <section class="container py-5">
+    <h1 class="h3 fw-bold mb-4 text-center text-info">Traveller Reviews</h1>
+    <p class="text-center text-light-50 mb-4">
+      Read what visitors say about Bangalore, or share your own experience.
+    </p>
+  </section>
+
+  <Reviews client:load />
+</MainLayout>

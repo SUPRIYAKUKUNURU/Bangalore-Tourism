@@ -23,28 +23,34 @@ export default function Navbar() {
 
       <div className="collapse navbar-collapse" id="mainNavbar">
         <ul className="navbar-nav ms-auto gap-3">
-          {["Home", "Places", "Food", "Culture", "Travel", "Contact"].map(
-            (item) => {
-              const link =
-                item === "Home"
-                  ? "/"
-                  : `/${item.toLowerCase()}`; // ✅ Travel now becomes /travel
 
-              return (
-                <li className="nav-item" key={item}>
-                  <a
-                    href={link}
-                    className="nav-link text-light"
-                    style={{ transition: "0.3s" }}
-                    onMouseEnter={(e) => (e.target.style.color = "#0dcaf0")}
-                    onMouseLeave={(e) => (e.target.style.color = "white")}
-                  >
-                    {item}
-                  </a>
-                </li>
-              );
-            }
-          )}
+          {[
+            "Home",
+            "Places",
+            "Food",
+            "Culture",
+            "Travel",
+            "Reviews",
+    
+            "Contact",
+          ].map((item) => {
+            const link =
+              item === "Home" ? "/" : `/${item.toLowerCase()}`;
+
+            return (
+              <li className="nav-item" key={item}>
+                <a
+                  href={link}
+                  className="nav-link text-light"
+                  style={{ transition: "0.3s" }}
+                  onMouseEnter={(e) => (e.target.style.color = "#0dcaf0")}
+                  onMouseLeave={(e) => (e.target.style.color = "white")}
+                >
+                  {item}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </nav>

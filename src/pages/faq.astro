@@ -1,0 +1,46 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Bangalore Tourism | FAQ">
+  <section class="container py-5">
+    <h1 class="h3 fw-bold mb-4 text-center text-info">Frequently Asked Questions</h1>
+    <p class="text-center text-light-50 mb-4">
+      Answers to common questions travellers have about visiting Bangalore.
+    </p>
+
+    <div class="accordion" id="faqAccordionPage">
+      {[
+        ["Is Bangalore safe for solo travellers?",
+         "Yes, Bangalore is generally considered safe. As with any big city, basic precautions are recommended, especially at night."],
+        ["What is the best way to get around?",
+         "Metro + BMTC buses + app-based cabs are the most convenient and cost-effective options."],
+        ["Do I need to know Kannada to travel in Bangalore?",
+         "No, English and Hindi are widely understood, especially in tourist and commercial areas."],
+        ["Are there late-night food and travel options?",
+         "Yes, certain areas like Indiranagar, Koramangala, MG Road and Airport Road have late-night eateries and cabs available 24/7."],
+      ].map(([q, a], idx) => (
+        <div class="accordion-item bg-dark text-light border-secondary" key={idx}>
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed bg-dark text-info"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target={`#faq-page-${idx}`}
+            >
+              {q}
+            </button>
+          </h2>
+          <div
+            id={`faq-page-${idx}`}
+            class="accordion-collapse collapse"
+          >
+            <div class="accordion-body text-light-50">
+              {a}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>
