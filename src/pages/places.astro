@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PlaceCard from "../components/PlaceCard.jsx";
+import { places } from "./data/places.js";
+---
+
+<MainLayout title="Bangalore Tourism | Places to Visit">
+  <section class="container py-5">
+    <h1 class="h3 fw-bold mb-4 text-center">Places to Visit in Bangalore</h1>
+    <p class="text-center text-light-50 mb-5">
+      These are some must-visit attractions in and around the city.
+    </p>
+
+    <div class="row g-4">
+      {places.map((place) => (
+        <div class="col-sm-6 col-lg-4">
+          <PlaceCard {...place} />
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>

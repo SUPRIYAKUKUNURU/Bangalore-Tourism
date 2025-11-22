@@ -1,11 +1,67 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import MainLayout from "../layouts/MainLayout.astro";
+import Hero from "../components/Hero.jsx";
+import TravelAndTicketing from "../components/TravelAndTicketing.jsx";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<MainLayout title="Bangalore Tourism | Home">
+  <Hero />
+
+  <section class="container py-5">
+    <h2 class="h3 fw-bold mb-3 text-center">Experience Bangalore</h2>
+    <p class="text-center text-light-50 mb-4">
+      From royal palaces and lush parks to vibrant food streets and tech parks,
+      Bangalore offers something for everyone.
+    </p>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card bg-secondary text-light border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Famous Landmarks</h5>
+            <p class="card-text small">
+              Explore Lalbagh, Cubbon Park, Bangalore Palace, Nandi Hills and
+              more iconic attractions.
+            </p>
+            <a href="/places" class="btn btn-outline-light btn-md btn-success">
+              View Places
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-secondary text-light border-0 h-100 ">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Local Food</h5>
+            <p class="card-text small">
+              Enjoy Masala Dosa, Donne Biryani, Idli-Vada, filter coffee, and
+              street food.
+            </p>
+            <a href="/food" class="btn btn-outline-light  btn-success btn-md">
+              Explore Food
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card bg-secondary text-light border-0 h-100">
+          <div class="card-body">
+            <h5 class="card-title text-primary">City Culture</h5>
+            <p class="card-text small">
+              Discover Bangalore&apos;s unique mix of technology, art,
+              festivals, and nightlife.
+            </p>
+            <a href="/culture" class="btn btn-outline-light btn-success btn-md">
+              View Culture
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+</MainLayout>

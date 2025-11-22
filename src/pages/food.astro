@@ -1,0 +1,22 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PlaceCard from "../components/PlaceCard.jsx";
+import { food } from "./data/food.js";
+---
+
+<MainLayout title="Bangalore Tourism | Local Food">
+  <section class="container py-5">
+    <h1 class="h3 fw-bold mb-4 text-center">Taste of Bangalore</h1>
+    <p class="text-center text-light-50 mb-5">
+      Don&apos;t leave Bangalore without trying these local favourites.
+    </p>
+
+    <div class="row g-4">
+      {food.map((item) => (
+        <div class="col-sm-6 col-lg-4">
+          <PlaceCard {...item} />
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>

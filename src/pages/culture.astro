@@ -1,0 +1,23 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import PlaceCard from "../components/PlaceCard.jsx";
+import { culture } from "./data/culture.js";
+---
+
+<MainLayout title="Bangalore Tourism | Culture & Lifestyle">
+  <section class="container py-5">
+    <h1 class="h3 fw-bold mb-4 text-center">Culture & Lifestyle</h1>
+    <p class="text-center text-light-50 mb-5">
+      Bangalore is modern yet rooted in tradition, with a mix of languages,
+      festivals, and lifestyles.
+    </p>
+
+    <div class="row g-4">
+      {culture.map((item) => (
+        <div class="col-sm-6 col-lg-4">
+          <PlaceCard {...item} />
+        </div>
+      ))}
+    </div>
+  </section>
+</MainLayout>

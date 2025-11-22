@@ -1,0 +1,39 @@
+---
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "../components/Navbar.jsx";
+import Footer from "../components/Footer.jsx";
+
+const { title = "Bangalore Tourism" } = Astro.props;
+---
+
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- ✅ Add Bootstrap Icons here -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+
+  <body class="bg-dark text-light">
+    <Navbar />
+
+    <main class="pt-4 pb-5">
+      <slot />
+    </main>
+
+    <Footer />
+
+    <!-- Bootstrap JS -->
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+</html>

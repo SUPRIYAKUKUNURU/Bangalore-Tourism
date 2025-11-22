@@ -1,0 +1,16 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import TravelAndTicketing from "../components/TravelAndTicketing.jsx";
+---
+
+<MainLayout title="Bangalore Tourism | Travel & Ticketing">
+  <section class="container py-5">
+    <h1 class="h3 fw-bold mb-4 text-center">Travel & Ticketing</h1>
+    <p class="text-center text-light-50 mb-5">
+      Plan your journey and explore transport options in Bangalore.
+    </p>
+  </section>
+
+  
+  <TravelAndTicketing client:load />
+</MainLayout>
