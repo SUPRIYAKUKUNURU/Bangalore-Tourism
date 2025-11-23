@@ -10,49 +10,80 @@ export default function Reviews() {
 
   useEffect(() => {
     const stored = localStorage.getItem("blr_reviews");
-    if (stored) {
-      setReviews(JSON.parse(stored));
-    }
+    if (stored) setReviews(JSON.parse(stored));
   }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     if (!form.name || !form.comment) {
-      alert("Please fill your name and comment.");
+      alert("Please enter your name and comment.");
       return;
     }
+
     const newReview = {
       ...form,
       date: new Date().toLocaleDateString(),
     };
+
     const newList = [newReview, ...reviews];
     setReviews(newList);
     localStorage.setItem("blr_reviews", JSON.stringify(newList));
+
     setForm({ name: "", rating: "5", comment: "" });
   };
 
   return (
     <section className="container pb-5">
       <div className="row g-4">
+
+        {/* LEFT SIDE - FORM */}
         <div className="col-lg-5">
-          <div className="bg-dark border border-secondary rounded-4 p-4">
-            <h3 className="h5 fw-bold text-info mb-3">Share Your Experience</h3>
+          <div
+            className="p-4 rounded-4 shadow-sm"
+            style={{
+              background: "white",
+              border: "1px solid #ddd",
+            }}
+          >
+            <h3 className="h5 fw-bold text-primary mb-3">
+              Share Your Experience
+            </h3>
+
             <form onSubmit={handleSubmit}>
+              {/* Name */}
               <div className="mb-3">
-                <label className="form-label text-info">Name</label>
+                <label className="form-label fw-semibold text-dark">Name</label>
                 <input
-                  className="form-control bg-black text-info"
+                  className="form-control"
+                  style={{
+                    background: "#f8f9fa",
+                    border: "1px solid #ccc",
+                    borderRadius: "10px",
+                  }}
                   value={form.name}
-                  onChange={(e) => setForm({ ...form, name: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, name: e.target.value })
+                  }
                 />
               </div>
 
+              {/* Rating */}
               <div className="mb-3">
-                <label className="form-label text-info">Rating</label>
+                <label className="form-label fw-semibold text-dark">
+                  Rating
+                </label>
                 <select
-                  className="form-control bg-black text-light"
+                  className="form-control"
+                  style={{
+                    background: "#f8f9fa",
+                    border: "1px solid #ccc",
+                    borderRadius: "10px",
+                  }}
                   value={form.rating}
-                  onChange={(e) => setForm({ ...form, rating: e.target.value })}
+                  onChange={(e) =>
+                    setForm({ ...form, rating: e.target.value })
+                  }
                 >
                   <option>5</option>
                   <option>4</option>
@@ -62,11 +93,19 @@ export default function Reviews() {
                 </select>
               </div>
 
+              {/* Comment */}
               <div className="mb-3">
-                <label className="form-label text-info">Comment</label>
+                <label className="form-label fw-semibold text-dark">
+                  Comment
+                </label>
                 <textarea
                   rows="3"
-                  className="form-control bg-black text-light"
+                  className="form-control"
+                  style={{
+                    background: "#f8f9fa",
+                    border: "1px solid #ccc",
+                    borderRadius: "10px",
+                  }}
                   value={form.comment}
                   onChange={(e) =>
                     setForm({ ...form, comment: e.target.value })
@@ -74,35 +113,57 @@ export default function Reviews() {
                 ></textarea>
               </div>
 
-              <button className="btn btn-info w-100" type="submit">
+              <button
+                className="btn w-100"
+                style={{
+                  borderRadius: "10px",
+                  background: "#0d6efd",
+                  color: "white",
+                  fontWeight: "bold",
+                }}
+                type="submit"
+              >
                 Submit Review
               </button>
             </form>
           </div>
         </div>
 
+        {/* RIGHT SIDE - REVIEWS */}
         <div className="col-lg-7">
-          <div className="bg-dark border border-secondary rounded-4 p-4 h-100">
-            <h3 className="h5 fw-bold text-info mb-3">Visitor Reviews</h3>
+          <div
+            className="p-4 rounded-4 shadow-sm h-100"
+            style={{
+              background: "white",
+              border: "1px solid #ddd",
+            }}
+          >
+            <h3 className="h5 fw-bold text-primary mb-3">
+              Visitor Reviews
+            </h3>
+
             {reviews.length === 0 ? (
-              <p className="text-light-50">
-                No reviews yet. Be the first to share your Bangalore experience!
+              <p className="text-muted">
+                Be the first to share your Bangalore travel experience!
               </p>
             ) : (
               <div className="small">
                 {reviews.map((rev, idx) => (
                   <div
-                    className="mb-3 pb-2 border-bottom border-secondary"
+                    className="mb-3 pb-3 border-bottom"
+                    style={{ borderColor: "#ddd" }}
                     key={idx}
                   >
                     <div className="d-flex justify-content-between">
-                      <strong className="text-secondary">{rev.name}</strong>
-                      <span className="text-info">
+                      <strong className="text-dark">{rev.name}</strong>
+                      <span style={{ color: "#f5c518" }}>
                         {"⭐".repeat(Number(rev.rating))}
                       </span>
                     </div>
+
                     <p className="mb-1 text-secondary">{rev.comment}</p>
-                    <span className="text-muted" style={{ fontSize: "0.75rem" ,color:"gray"}}>
+
+                    <span className="text-muted" style={{ fontSize: "0.75rem" }}>
                       {rev.date}
                     </span>
                   </div>
@@ -111,6 +172,7 @@ export default function Reviews() {
             )}
           </div>
         </div>
+
       </div>
     </section>
   );
