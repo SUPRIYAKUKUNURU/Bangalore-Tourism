@@ -68,7 +68,4 @@ export const food = [
   description: "A sweet flatbread filled with jaggery and dal, enjoyed during festivals and served fresh in traditional Bangalore eateries."
 }
 
-
-
-
 ];

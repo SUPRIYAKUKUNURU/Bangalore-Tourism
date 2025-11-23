@@ -39,16 +39,16 @@ export default function Reviews() {
             <h3 className="h5 fw-bold text-info mb-3">Share Your Experience</h3>
             <form onSubmit={handleSubmit}>
               <div className="mb-3">
-                <label className="form-label text-light-50">Name</label>
+                <label className="form-label text-info">Name</label>
                 <input
-                  className="form-control bg-black text-light"
+                  className="form-control bg-black text-info"
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                 />
               </div>
 
               <div className="mb-3">
-                <label className="form-label text-light-50">Rating</label>
+                <label className="form-label text-info">Rating</label>
                 <select
                   className="form-control bg-black text-light"
                   value={form.rating}
@@ -63,7 +63,7 @@ export default function Reviews() {
               </div>
 
               <div className="mb-3">
-                <label className="form-label text-light-50">Comment</label>
+                <label className="form-label text-info">Comment</label>
                 <textarea
                   rows="3"
                   className="form-control bg-black text-light"
@@ -96,13 +96,13 @@ export default function Reviews() {
                     key={idx}
                   >
                     <div className="d-flex justify-content-between">
-                      <strong>{rev.name}</strong>
+                      <strong className="text-secondary">{rev.name}</strong>
                       <span className="text-info">
                         {"⭐".repeat(Number(rev.rating))}
                       </span>
                     </div>
-                    <p className="mb-1 text-light-50">{rev.comment}</p>
-                    <span className="text-muted" style={{ fontSize: "0.75rem" }}>
+                    <p className="mb-1 text-secondary">{rev.comment}</p>
+                    <span className="text-muted" style={{ fontSize: "0.75rem" ,color:"gray"}}>
                       {rev.date}
                     </span>
                   </div>
