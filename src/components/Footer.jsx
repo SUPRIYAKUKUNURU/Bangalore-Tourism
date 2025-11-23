@@ -2,11 +2,11 @@ export default function Footer() {
   return (
     <footer
       className="text-center text-light py-3 mt-2"
-      style={{
-        background: "rgba(0,0,0,0.6)",
-        backdropFilter: "blur(12px)",
-        borderTop: "1px solid rgba(255,255,255,0.08)",
-      }}
+      // style={{
+      //   background: "rgba(0,0,0,0.6)",
+      //   backdropFilter: "blur(12px)",
+      //   borderTop: "1px solid rgba(255,255,255,0.08)",
+      // }}
     >
       <p className="mb-1 small text-light-50">
         © {new Date().getFullYear()} Bangalore Tourism

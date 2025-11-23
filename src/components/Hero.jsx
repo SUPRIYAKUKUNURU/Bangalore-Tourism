@@ -15,9 +15,9 @@ export default function Hero() {
      <div
   className="position-absolute top-0 start-0 w-100 h-100 
          d-flex flex-column justify-content-center align-items-center text-center p-4"
-  style={{
-    background: "rgba(0, 0, 0, 0.25)",   // soft transparent overlay
-  }}
+  // style={{
+  //   background: "rgba(0, 0, 0, 0.25)",   // soft transparent overlay
+  // }}
 >
   <h1 className="display-2 fw-bold text-info mb-3">
     Welcome to Bangalore

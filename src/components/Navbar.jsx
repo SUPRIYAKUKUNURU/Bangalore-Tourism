@@ -2,11 +2,7 @@ export default function Navbar() {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark px-4 py-3"
-      style={{
-        background: "rgba(0, 0, 0, 0.65)",
-        backdropFilter: "blur(12px)",
-        borderBottom: "1px solid rgba(255,255,255,0.08)",
-      }}
+  
     >
       <a className="navbar-brand fs-3 fw-bold text-info" href="/">
         Bangalore Tourism
