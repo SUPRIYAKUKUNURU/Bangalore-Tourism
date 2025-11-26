@@ -23,7 +23,7 @@ export default function PlaceCard({ title, image, description }) {
         <p
           className="card-text"
           style={{
-            color: "#444",     // 👈 DARK COLOR — Fully Visible
+            color: "#444",     
             fontSize: "0.92rem",
             lineHeight: "1.5",
             marginTop: "6px",

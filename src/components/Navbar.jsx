@@ -1,4 +1,11 @@
+import { useEffect, useState } from "react";
+
+
 export default function Navbar() {
+  const [active ,setActive] = useState("/");
+  useEffect(()=>{
+    setActive(window.location.pathname);
+  },[]);
   return (
     <nav
       className="navbar navbar-expand-lg navbar-dark px-4 py-3"
@@ -20,7 +27,7 @@ export default function Navbar() {
       <div className="collapse navbar-collapse" id="mainNavbar">
         <ul className="navbar-nav ms-auto gap-3">
 
-          {[
+            {[
             "Home",
             "Places",
             "Food",
