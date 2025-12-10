@@ -6,7 +6,7 @@ export default function Footer() {
       <p className="mb-0 small">
         Made with{" "}
         <i className="bi bi-heart-fill" style={{ color: "red" }}></i> by{" "}
-        <span className="fw-bold text-primary">Supriya</span>
+        <span className="fw-bold text-primary">Supriya Kukunuru</span>
       </p>
     </footer>
   );
