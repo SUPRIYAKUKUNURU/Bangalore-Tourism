@@ -93,8 +93,8 @@ export default function TravelAndTicketing() {
                 <a
                   href={item.link}
                   className="btn btn-success btn-md mt-2"
-                  target="_blank"
-                >
+                  target="_blank">
+                
                   Book / Visit
                 </a>
               </div>
