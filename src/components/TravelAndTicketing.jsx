@@ -85,8 +85,8 @@ export default function TravelAndTicketing() {
                     color: "#444",
                     fontSize: "0.92rem",
                     lineHeight: "1.5"
-                  }}
-                >
+                  }}>
+                
                   {item.description}
                 </p>
 
